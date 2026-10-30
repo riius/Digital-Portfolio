@@ -1,0 +1,36 @@
+name = "luis-portfolio"
+account_id = "895708b4bdc3419e163419cdb51e204a"
+main = "worker.js"
+compatibility_date = "2026-10-29"
+
+# Keeps https://luis-portfolio.<your-account>.workers.dev working so you can test
+# before your domain is ready. Set to false once the custom domain works.
+workers_dev = true
+
+# Your domain. Cloudflare creates the DNS records and the HTTPS certificate for you.
+# (The domain must already be added to your Cloudflare account and show "Active".)
+[[routes]]
+pattern = "luislopezcreates.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.luislopezcreates.com"
+custom_domain = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Stores the edits you publish from the site's editor. (Already created in your account.)
+[[kv_namespaces]]
+binding = "SITE"
+id = "89364d209f6248a38b3be656aaf985c4"
+
+# Videos and large files you upload from the editor. OPTIONAL.
+# 1. Turn on R2 in the Cloudflare dashboard (R2 Object Storage, needs a payment method on file;
+#    the free allowance of 10 GB is plenty).
+# 2. Run:  npx wrangler r2 bucket create portfolio-media
+# 3. Delete the "#" at the start of the three lines below, then deploy again.
+# [[r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "portfolio-media"
