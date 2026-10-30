@@ -1,7 +1,7 @@
-name = "luis-portfolio"
+name = "digital-portfolio"
 account_id = "895708b4bdc3419e163419cdb51e204a"
 main = "worker.js"
-compatibility_date = "2026-10-29"
+compatibility_date = "2024-09-23"
 
 # Keeps https://luis-portfolio.<your-account>.workers.dev working so you can test
 # before your domain is ready. Set to false once the custom domain works.
